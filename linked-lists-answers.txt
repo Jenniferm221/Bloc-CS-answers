@@ -1,0 +1,153 @@
+What are some pros and cons of using linked lists instead of arrays?
+	A. Pros: No memory space wasted on placeholder elements, and memory allocated 	does not need to be contiguous allowing linked lists to become extremely large
+	Cons: All preceding nodes must be accessed in order before one can access the 	desired node
+Come up with a real world example of a linked list
+	A. Over time it can be difficult for an Operating System to find contiguous disk space 	sufficient to store large files so it usually splits these up into chunks across the 	physical hard drive and stores the locations of the file fragments as a linked list
+Programming Questions
+You may program the following questions in any language of your choice (JavaScript, Ruby, etc.).
+Before beginning to code, write out a plan explaining how to solve the question.
+1. The linked list push function should take a value, create a node, and add it to the end of a list. Below is pseudocode for a push function for a singly linked list. However, there is something wrong with it. Submit both an explanation of the bug and a functional implementation of the method.
+EXAMPLE
+FUNCTION push(element)
+CREATE node
+SET node.value TO element
+SET node.next TO null
+
+IF the head node does not exist
+ THEN SET head to node
+ELSE
+ SET current to head
+ SET current.next to node
+END IF
+END FUNCTION
+
+A.  The function is setting the current node to head if head node already exists. There can only be one head node in a linked list, the starting element. The current node should be set to the newly created node at the end of the list. The function should read as follows: 
+
+FUNCTION push(element)
+  CREATE node
+  SET node.value TO element
+  SET node.next TO null
+
+  IF the head node does not exist
+    THEN SET head to node
+  ELSE
+    SET current to node
+  END IF
+END FUNCTION
+
+function Node (value) {
+  this.value = value;
+  this.next = null;
+}
+
+function LinkedList () {
+  let head = undefined;
+  return {
+    push: function (element) {
+      let node = new Node(element)
+      if (head) {
+        node.next = head
+      }
+      console.log(node)
+    }  
+  }
+
+}
+
+let newNode = new LinkedList() 
+newNode.push("current")
+
+
+2.   Given an unsorted singly linked list, remove all duplicates from the linked list.
+Example
+Input: a -> c -> d -> d -> a
+Output: a -> c -> d
+
+A. 
+
+function LinkedList () {
+  this.head = null;
+  this.size = 0;
+}
+
+LinkedList.prototype = {
+  createNode: function(val) {
+    return {
+      data: val,
+      next: null
+    }
+  },
+  addToTail: function(val) {
+    var current,
+    newNode = this.createNode(val);
+    if (this.head == null) {
+      this.head = newNode
+    }
+    else {
+      current = this.head
+      while(current.next != null) {
+        current = current.next
+      }
+      current.next = newNode
+    }
+    this.size++
+  },
+  removeDuplicates: function() {
+    current = this.head
+    while(current != null) {
+      if(!current.data) {
+        current.data = true
+      } else {
+        current = current.next
+        this.size--
+      }
+    } 
+  }
+}
+
+let newList = new LinkedList()
+newList.createNode("all")
+newList.addToTail("duplicates")
+newList.addToTail("all")
+newList.addToTail("delete")
+newList.removeDuplicates()
+console.log(newList)
+
+
+
+
+3. Given an unsorted singly linked list, reverse it.
+Example
+Input: a -> b -> c -> d
+Output: d -> c -> b -> a
+
+
+A. 
+
+let list = {
+  value: "Apple",
+  next: {
+    value: "Bear",
+    next: {
+      value: "Candy",
+    next: {
+	  value: "Deer",
+	next: null
+      }
+    }
+  }
+}
+
+function reverseList(list) {
+  let node = list
+  let previous = null
+
+  while(node != null) {
+    let nodeNext = node.next
+    node.next = previous
+    previous = node
+    node = nodeNext  
+  }
+  return previous
+}
+console.log(reverseList(list))
