@@ -1,0 +1,81 @@
+Exercises
+
+
+1. Using proper pseudo-code, describe the following primitive algorithms:
+
+-Making coffee;
+-Washing dishes;
+- A choice of your own.
+
+
+A. 
+Making Coffee
+
+FUNCTION makingCoffeeKeurig()
+      GET Coffee Pod and water
+      PUT Coffee Pod and water in Keurig 
+      IF Keurig Machine light is green
+        PRESS on button and place a mug on the machine
+      END IF
+      FOR EACH cup finished brewing 
+        REMOVE cup from machine
+        PUT 1 teaspoon of sugar
+       END FOR      
+     END FUNCTION
+
+
+Doing Dishes 
+  FUNCTION washingDishes()
+                TURN water ON
+                GRAB soap and sponge
+                POUR soap on sponge
+                WHILE there is dirty dishes
+                    SCRUB dishes
+                    RINSE dishes
+                    PLACE clean dishes on drying rack
+                END WHILE
+                RINSE HANDS
+                TURN water OFF
+        END FUNCTION
+
+
+Painting Nails
+FUNCTION paintingNails()
+    GET nail polish and nail polish remover
+    IF nails has old polish
+         Remove polish with remover
+    END IF 
+    FOR EACH nail 
+        use 2 coats of paint
+    END FOR 
+    WHILE polish is not dry
+       wait 1 minute
+    END WHILE
+  END FUNCTION
+
+
+2. As with the knot algorithm, there may be more than one way to solve the problem. It is essential to try to pick the best algorithm for 
+a situation. Name three companies who created an algorithm that made them successful, e.g., Google's search algorithm. It doesn't need to 
+be a tech example (such as a recipe or manufacturing a product). Google's algorithm produces more relevant results than other search engines;
+ what about each of your cases make them stand out?
+
+
+A.
+Uber’s Algorithm: The surge algorithm at Uber aims to balance the supply and demand in certain regions at certain peak usage times. The 
+surge price acts as an additional motivator for drivers during rush times.
+
+-Facebook’s Algorithm: The news feed algorithm prioritizing ‘meaningful interactions’ it’s based on comments, reactions, comment replies, 
+sharing links over Messenger and engagement on shares. This algorithm stands out because it intends to elicit ‘active interactions ‘ instead 
+of just having user passively scroll through the news feed.
+
+Spotify’s Algorithm: It’s algorithm offer music suggestions based on several factors such as previously downloaded songs and most listened
+ songs for each user. This algorithm allows users to use Spotify to discover new music and bands based on their current interests and 
+listening habits. 
+
+
+3. Hypothesize about what constitutes an efficient algorithm versus an inefficient algorithm.
+
+A. The analysis of an algorithm to determinate efficiency is based on time( how long does the algorithm take to complete) and space( how 
+much memory does the algorithm use). This analysis can be done using the Big O notation. Efficient algorithms are also easy to understand 
+and not redundant.
+
