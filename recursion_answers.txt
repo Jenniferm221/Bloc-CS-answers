@@ -1,0 +1,44 @@
+1. Define and compare recursion and iteration.
+Recursion is when a function calls itself. A recursive function can call itself forever, but that's generally not preferred. It's often a good idea to include a condition in the function definition that allows it to stop calling itself. This condition is referred to as a base case. As a general rule, recursion shouldn't be utilized without an accompanying base case unless an infinite operation is desired. This leaves us with two fundamental conditions every recursive function should include:
+A base case
+A recursive case. 
+Iteration is the technique of utilizing a loop to repeat a process.  Both repeat things in a program just in different ways. Loops use control variables or other boolean events to stop a process. The three main loop structures are the while, do while and for. Recursion defines a method that calls itsself using an if else statement with recursive calls to create the repitition and base cases to stop the process. Loops are memory efficiant, while recursion is a memory hog. Anything done with a loop can also be done with recursion however it does not work the other way. It is best when you can  to use a loop rather than recursion. 
+
+2. Name five algorithms that are commonly implemented by recursion. 
+A. Five algorithms that are commonly implemented by recursion include:
+1. The Binary Tree
+2. Merge Sort
+3. Quick Sort
+4. Factorial
+5. Fibonacci Sequence
+3. When should you use recursion, and when should you avoid recursion? Give examples for each.
+A. Whenever a problem (function) can be solved with a loop recrursion should be avoided as iteration over a loop is a more time efficent way to solve the function. For instance, if you wanted to write a function that counted down from 10-0, this could be written as a recursive function but is much more efficant to be written as a loop.
+However there are times when a loop will not give you the desired result and recursion is neccisary. An example of this would be if there was a list of things stored in a database that you needed to access and make a list of some type. 
+4. Compare the recursive and iterative solutions to the three algorithms from the checkpoint (factorial, maximum, and fibonacci). What is similar, and what is different?
+A. They are similar in that all three compare to another number to get their result, and they are all different in their methods of getting the result.
+5. Given a multi-dimensional collection (such as an array) where the number of dimensions is unknown, write a recursive algorithm to count the number of items in the entire collection.
+var addNumber = function(array, count) {
+  if (count < array.length) {
+    return array[count] + addNumber(array, count + 1);
+  } else {
+    return 0;
+  }
+};
+  var sum = 0;
+  var count = 0;
+sum = sum + addNumber([1, 2, 3, 5, 6, 7], count);
+sum;
+6. A palindrome is a word or phrase whose spelling is the same either direction (e.g., racecar). Write a recursive algorithm to determine if a given word or phrase is a palindrome.
+var isPalindrome = function(string){
+  var stringLength = string.length;
+  if (stringLength === 0 || stringLength === 1) {
+    return true;
+  }
+  if (string[0] === string[stringLength -1]) {
+    return isPalindrome(string.slice(1, stringLength -1) );
+  }
+  return false;
+};
+isPalindrome("racecar");
+7. Google Easter Egg: Google the term "recursion". Google will prompt you with "Did you mean: recursion". Explain why this behavior exhibits properties of recursion.
+A. This exhibits properties of recursion because recursion is a function that calls itsself till it doesnt. This is a funny way for google to ad a pun in when searching for recursion.
