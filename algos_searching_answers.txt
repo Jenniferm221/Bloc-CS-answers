@@ -1,0 +1,93 @@
+Short Answer
+1. What is a real-life scenario that uses linear search?
+
+A. Linear search works by iterating through an array, list, linked list, or any other type of collection until it finds the target item.  A simple example of this 
+could be if you are a cashier at a department store and a customer wants to make a return. Looking at their receipt you would do a linear search of the receipt until
+ you found the correct item  on it to process the return. 
+
+2. What is a real-life scenario that uses binary search?
+
+A. Binary search is a search algorithm that uses divide and conquer methodology. It only functions properly on a pre-sorted collection. A real life example of this 
+ could be looking something up in the dictionary. Lets say you need to look up the word RESPECT in the dictionary, you start by opening the book and you realize you
+are in the letter M, so you grab a handful more pages and open again and lets say you are in the letter S, so then you need to go back some pages until you are in
+the R words and then look to find respect. Binary search is like this becasue you have a start, middle and End and as you look for the matirial the start middle and
+end adjust accordingly until you find the desired result. 
+
+3. Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using linear search?
+
+A. it would take seven iterations using Liniear search to find the value of G. 
+
+4. Given the alphabetically sorted collection in this checkpoint, how many iterations would it take to find the value G using binary search?
+
+A. it would take 3 iterations to find the value of G. The first iteration we would compair G to D as the mid point and get that it was greater than D. in the second
+iteration we would compare G to the value at the new mid point F, and it would be greater, the last iterration the Low Mid and High would point to G and return the 
+desired result of the search. 
+
+
+5. Given an unsorted collection of a million items, which algorithm would you choose between linear search and binary search? Explain your reasoning.
+
+A. I would choose Liniar search because binary search will only work with a sorted list of items. If we dont have a sorted list, the binanry method of a low, mid and
+high do not exist so you would have to do a liniar search to find what you are looking for.
+
+6. Given a sorted collection of a million items, which algorithm would you choose between linear search and binary search? Explain your reasoning.
+
+A. With a sorted collection of a million Items I would definitly choose a binary search. A liniar search you could possibly have to iterate through all million items to
+find what you are looking for. With a binary search since the items are in a sorted order we compair the value we are looking for to the mid point of the sorted list and 
+then determine if it is greater than or less than that point, and so on till we get an answer. This sugnifficantly cuts down on the time it takes to run the code. 
+
+
+Programming Assignment:
+
+1. You and a friend have set a wager to see who can find the word "Albatross" in the dictionary the fastest. Write a program to allow you to win the bet.
+
+A. 
+let dictionary = [ "Accent","Ace","Albitros", "anotherTest", "random", "test"]
+
+
+function binarySearch(dictionary, word){
+  
+let start = 0;
+ 
+let end = dictionary.length - 1;
+  
+let middle = Math.floor((start + end) / 2);
+
+  
+
+while(dictionary[middle] !== word && start <= end){
+    
+if(dictionary[middle] < word) {
+      
+start = middle + 1;
+    
+} else { 
+      
+end = middle - 1;
+   
+} middle = Math.floor((start + end) / 2);
+  
+}
+  
+return dictionary[middle] === word ? middle : -1;
+
+}
+
+
+console.log(binarySearch(dictionary, 'Albitros'))
+
+2. You work at a pet store, and a child has asked you to net the only white-spotted goldfish from the fish tank. Write a program that will help you net the right fish.
+
+A.
+
+let arr = ["pink diamond fish","white spotted goldfish", "yellow polka dot goldfish", "giant blue fish"]
+
+function linearSearch(arr, elem) {
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] === elem) {
+      return i;
+    }
+  }
+  return "there are no white spotted goldfish"
+}
+console.log(linearSearch(arr,"white spotted goldfish"));
+
